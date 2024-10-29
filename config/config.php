@@ -3,8 +3,8 @@
 $servername = "localhost";
 //echo $servername;
 $username = "root";
-$password = "";
-$dbname = "northwind";
+$password = "VTEChc4.4i";
+$dbname = "Northwind";
 // Create connection Object oriented style
 $conn = new mysqli($servername, $username, $password, $dbname);
 $conn->set_charset("utf8");// estrictamente para no tener problemas con las tildes y ñ

@@ -1,7 +1,8 @@
 <?php
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
 // Incluye TCPDF
 require_once( __DIR__ . '/vendor/tecnickcom//tcpdf/tcpdf.php');
 
@@ -15,8 +16,8 @@ $fechaFin = $_POST['fechaFin'];
 
 // Consulta SQL
 $sql = "SELECT ord.custId, c.companyName, COUNT(ord.orderId) AS totalOrders, MIN(ord.orderDate) AS firstOrderDate, MAX(ord.orderDate) AS lastOrderDate
-        FROM salesorder ord 
-        INNER JOIN customer c ON ord.custId = c.custId
+        FROM SalesOrder ord 
+        INNER JOIN Customer c ON ord.custId = c.custId
         WHERE ord.orderDate BETWEEN ? AND ?
         GROUP BY ord.custId
         ORDER BY totalOrders DESC";
