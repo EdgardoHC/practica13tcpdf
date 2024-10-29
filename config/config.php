@@ -3,7 +3,7 @@
 $servername = "localhost";
 //echo $servername;
 $username = "root";
-$password = "VTEChc4.4i";
+$password = "";
 $dbname = "Northwind";
 // Create connection Object oriented style
 $conn = new mysqli($servername, $username, $password, $dbname);
